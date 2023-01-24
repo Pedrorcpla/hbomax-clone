@@ -9,7 +9,7 @@ import Category from './Catalog/Category';
 const Details = (props) => {
     const [data, setData] = useState(null)
 
-    function getShow(){
+    useEffect(() => {
         const key = process.env.REACT_APP_API
 
         Api.get(`${props.type}/${props.id}?api_key=${key}&append_to_response=external_ids`)
@@ -17,11 +17,7 @@ const Details = (props) => {
                 setData(response.data)
             })
             .catch(error => console.log(error))
-    }
-
-    useEffect(() => {
-        getShow();
-    },[]);
+    },[props]);
 
     if(!data){
         return null

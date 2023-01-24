@@ -5,7 +5,7 @@ const SideBar = (props) => {
 
     useEffect(() => {
         setClose(props.open)
-    }, [])
+    }, [props])
 
     return (
         <div className="sideBar" style={{display: close}}>
