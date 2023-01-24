@@ -6,7 +6,7 @@ import Card from './Card'
 const Category = (props) => {
     const [data, setData] = useState(null)
 
-    function getMovie(){
+    useEffect(() => {
         const key = process.env.REACT_APP_API
 
         Api.get(`${props.category}?api_key=${key}${props.genre}`)
@@ -14,11 +14,7 @@ const Category = (props) => {
                 setData(response.data.results)
             })
             .catch(error => console.log(error))
-    }
-
-    useEffect(() => {
-        getMovie();
-    },[]);
+    },[props]);
 
     if(!data){
         return null
