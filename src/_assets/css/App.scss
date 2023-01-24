@@ -243,6 +243,7 @@ body{
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
+        overflow-x: scroll;
 
         .user{
             display: flex;
@@ -251,10 +252,10 @@ body{
             justify-content: space-evenly;
             
             height: 40vh;
-            width: 60vw;
+            width: 40vh;
 
             a{
-                height: 22.5vh;
+                height: 22.5vh; 
                 width: 22.5vh;
             
                 display: flex;
@@ -296,14 +297,17 @@ body{
             }
         }
     }
+    .users::-webkit-scrollbar { 
+        display: none;
+    }
     .options{
-        width: 50vw;
+        width: 50vh;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .option{
-            width: 30%;
+            width: 40%;
             height: 7vh;
             margin: 0 2.5%;
             display: flex;
@@ -415,7 +419,7 @@ body{
                     background-image: linear-gradient(to right, rgb(185, 79, 255), rgb(106, 0, 177));
                 }
                 .more{
-                    width: 50vh;
+                    width: 50vw;
                     height: 7vh;
                     margin: 0 2.5%;
                     display: flex; 
@@ -495,7 +499,6 @@ body{
             
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-evenly;
 
                     .img{
                         width: 100%;
@@ -513,6 +516,11 @@ body{
                         }
                         .name{
                             height: 10%;
+                            overflow: hidden; // Removendo barra de rolagem
+                            text-overflow: ellipsis; // Adicionando "..." ao final
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2; // Quantidade de linhas
+                            -webkit-box-orient: vertical; 
                         }
                     }
                 }
@@ -572,6 +580,7 @@ body{
                         }
                         .name{
                             height: 10%;
+                            font-size: 0.5em;
                         }
                     }
                 }
@@ -844,6 +853,9 @@ body{
                     .item{
                         height: 25vh;
                         width: 15vh;
+                        .name{
+                            font-size:.5em
+                        }
                     }
                 }
             }
@@ -853,6 +865,9 @@ body{
                     .item{
                         height: 25vh;
                         width: 25vh;
+                        .name{
+                            font-size:.5em
+                        }
                     }
                 }
             }
@@ -872,31 +887,12 @@ body{
                     .item{
                         height: 25vh;
                         width: 35vh;
-                        margin-right: 1%;
-                
-                        text-decoration: none;
-                        color: white;
-                
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-evenly;
-    
+                        margin-right: 1%;   
                         .img{
                             width: 100%;
                             height: 80%;
-                            
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            overflow: hidden;
-                    
-                            box-shadow: 0 8px 15px black;
-    
-                            img{
-                                height: 100%;
-                            }
                             .name{
-                                height: 10%;
+                                font-size:.3em;
                             }
                         }
                     }
@@ -933,34 +929,15 @@ body{
     
                     .item{
                         height: 45vh;
-                        width: 45vh;
-                        margin-right: 1%;
-                
-                        text-decoration: none;
-                        color: white;
-                
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-evenly;
-    
+                        width: 45vh;    
                         .img{
                             width: 100%;
                             height: 80%;
-                            
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            overflow: hidden;
-                    
-                            box-shadow: 0 8px 15px black;
-    
-                            img{
-                                height: 100%;
-                            }
                             .name{
-                                height: 10%;
+                                font-size:.5em
                             }
                         }
+                        
                     }
                 }
                 
